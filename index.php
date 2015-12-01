@@ -43,8 +43,9 @@
                           $lat=mysql_result($result,$i,"lat");
                           $lng=mysql_result($result,$i,"lng");
 $i++;
+                          }}
 ?>
-}
+
           ];
 
         
