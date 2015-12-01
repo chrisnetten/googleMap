@@ -27,8 +27,8 @@
 
 <?php
 		$qry='SELECT * FROM user';
-		$result = mysql_query( $qry );
-    while ( $db_field = mysql_fetch_assoc($result) ) {
+		
+    while ( $db_field = mysql_fetch_assoc($qry) ) {
 
 print $db_field['name'] . "<BR>";
 print $db_field['lat'] . "<BR>";
