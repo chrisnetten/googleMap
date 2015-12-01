@@ -24,6 +24,17 @@
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
   </head>
   <body>
+    <?php
+		$qry='SELECT * FROM user';
+		$statement =$db_Object->prepare($qry);
+		
+		$statement->execute();
+		
+		$resultset = $statement-> fetchAll();
+		
+		$statement->closeCursor();
+		
+		?>
       <script>
           
         function initializeMap() {
