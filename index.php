@@ -61,7 +61,7 @@ $qry='SELECT * FROM user';
        
        
           
-            for(var i = 0; user.length; i++) {
+           
                     var myLatlng = new google.maps.LatLng( lat, lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng,
@@ -71,7 +71,7 @@ $qry='SELECT * FROM user';
             
           
         
-            }
+            
       
         }
          
