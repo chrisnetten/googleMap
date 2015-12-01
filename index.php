@@ -25,28 +25,17 @@
   </head>
   <body>
 
+<?php
+$query = "SELECT name,lat,lng FROM user";
+$result = mysql_query($query);
+if (!$result) {
+  die('Invalid query: ' . mysql_error());
+}
+?>
       <script>
           
         function initializeMap() {
-   
-          
-          var locations = [
-                        <?php
-                          $query="SELECT * from user";
-                           $result=mysql_query($query);
-{
-                          if ($num=mysql_numrows($result)) {
-                            $i=0;
-                          while ($i < $num) {
-                          $id=mysql_result($result,$i,"id");
-                          $name=mysql_result($result,$i,"name");
-                          $lat=mysql_result($result,$i,"lat");
-                          $lng=mysql_result($result,$i,"lng");
-$i++;
-                          }}
-?>
 
-          ];
 
         
           var mapOptions = {
@@ -59,10 +48,10 @@ $i++;
        
           
             for(var i = 0; user.length; i++) {
-                    var myLatlng = new google.maps.LatLng( locations[i].lat, locations[i].lng);
+                    var myLatlng = new google.maps.LatLng( user[i].lat, user[i].lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng,
-                         title: locations[i].name
+                         title: user[i].name
                           });
                            marker.setMap(map);
             
