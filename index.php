@@ -38,15 +38,18 @@ $qry='SELECT * FROM user';
 		$statement->closeCursor();
 		
     foreach ($resultset as $user) {
-     $user['name'] = name;
-    $user['lat'] = lat;
-    $user['lng'] = lng ;
+    $name = $user['name'] . '<br />';
+    $lat = $user['lat'] . '<br />' ;
+    $lng $user['lng'] . '<br />' ;
 }
 		?>
       <script>
           
         function initializeMap() {
-
+          
+          var name = parseFloat("<?php echo $name  ?>");
+          var lat = parseFloat("<?php echo $lat ?>");
+          var lng =  parseFloat("<?php echo $lng ?>");
 
         
           var mapOptions = {
