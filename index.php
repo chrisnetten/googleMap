@@ -20,7 +20,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
       
       
-    <script src="javascript/map.js" type="text/javascript"></script>
+    <script src="/javascript/map.js" type="text/javascript"></script>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
   </head>
   <body>
