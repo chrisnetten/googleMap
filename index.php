@@ -26,12 +26,16 @@
   <body>
 
 <?php
-$query = "SELECT name,lat,lng FROM user";
-$result = mysql_query($query);
-if (!$result) {
-  die('Invalid query: ' . mysql_error());
-}
-?>
+		$qry='SELECT * FROM user';
+		$statement =$db_Object->prepare($qry);
+		
+		$statement->execute();
+		
+		$resultset = $statement-> fetchAll();
+		
+		$statement->closeCursor();
+		
+		?>
       <script>
           
         function initializeMap() {
