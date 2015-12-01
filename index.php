@@ -40,7 +40,7 @@ $qry='SELECT * FROM user';
     foreach ($resultset as $user) {
     $name = $user['name'] . '<br />';
     $lat = $user['lat'] . '<br />' ;
-    $lng $user['lng'] . '<br />' ;
+    $lng = $user['lng'] . '<br />' ;
 }
 		?>
       <script>
