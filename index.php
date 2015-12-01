@@ -27,13 +27,19 @@
 
 <?php
 		$qry='SELECT * FROM user';
-		
+    
+		if(mysql_num_row($qry)>0){
+
     while ( $row = mysql_fetch_array($qry) ) {
 
 print $row['name'] . "<BR>";
 print $row['lat'] . "<BR>";
 print $row['lng'] . "<BR>";
 
+}
+}
+else{
+   echo 'it brings no data....';
 }
 		
 		?>
