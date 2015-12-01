@@ -24,22 +24,28 @@
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
   </head>
   <body>
-    <?php
-		$qry='SELECT * FROM user';
-		$statement =$db_Object->prepare($qry);
-		
-		$statement->execute();
-		
-		$resultset = $statement-> fetchAll();
-		
-		$statement->closeCursor();
-		
-		?>
+
       <script>
           
         function initializeMap() {
    
-
+          
+          var locations = [
+                        <?php
+                          $query="SELECT * from user";
+                           $result=mysql_query($query);
+{
+                          if ($num=mysql_numrows($result)) {
+                            $i=0;
+                          while ($i < $num) {
+                          $id=mysql_result($result,$i,"id");
+                          $name=mysql_result($result,$i,"name");
+                          $lat=mysql_result($result,$i,"lat");
+                          $lng=mysql_result($result,$i,"lng");
+$i++;
+?>
+}
+          ];
 
         
           var mapOptions = {
@@ -52,10 +58,10 @@
        
           
             for(var i = 0; user.length; i++) {
-                    var myLatlng = new google.maps.LatLng( user[i].lat, user[i].lng);
+                    var myLatlng = new google.maps.LatLng( locations[i].lat, locations[i].lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng,
-                         title: user[i].name
+                         title: locations[i].name
                           });
                            marker.setMap(map);
             
