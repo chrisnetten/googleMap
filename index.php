@@ -28,11 +28,11 @@
 <?php
 		$qry='SELECT * FROM user';
 		
-    while ( $db_field = mysql_fetch_assoc($qry) ) {
+    while ( $row = mysql_fetch_array($qry) ) {
 
-print $db_field['name'] . "<BR>";
-print $db_field['lat'] . "<BR>";
-print $db_field['lng'] . "<BR>";
+print $row['name'] . "<BR>";
+print $row['lat'] . "<BR>";
+print $row['lng'] . "<BR>";
 
 }
 		
