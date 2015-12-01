@@ -61,14 +61,14 @@ $qry='SELECT * FROM user';
        
        
           
-           <?php foreach($resultset as $user) {?>
+           
                     var myLatlng = new google.maps.LatLng( lat, lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng,
                          title: name
                           });
                            marker.setMap(map);
-           <?php } ?>
+           
           
         
             
