@@ -34,11 +34,6 @@ print $db_field['name'] . "<BR>";
 print $db_field['lat'] . "<BR>";
 print $db_field['lng'] . "<BR>";
 
-}else {
-
-print "Database NOT Found ";
-mysql_close($db_handle);
-
 }
 		
 		?>
