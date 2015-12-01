@@ -27,13 +27,19 @@
 
 <?php
 		$qry='SELECT * FROM user';
-		$statement =$db_Object->prepare($qry);
-		
-		$statement->execute();
-		
-		$resultset = $statement-> fetchAll();
-		
-		$statement->closeCursor();
+		$result = mysql_query( $qry );
+    while ( $db_field = mysql_fetch_assoc($result) ) {
+
+print $db_field['name'] . "<BR>";
+print $db_field['lat'] . "<BR>";
+print $db_field['lng'] . "<BR>";
+
+}else {
+
+print "Database NOT Found ";
+mysql_close($db_handle);
+
+}
 		
 		?>
       <script>
@@ -91,11 +97,11 @@
             </fieldset>
              <fieldset class="form-group">
                 <label for="lat">Latitude: *</label>
-                <input name="lat" type="text" class="form-control" required autofocus />
+                <input name="lat" type="text" class="form-control" required  />
             </fieldset>
              <fieldset class="form-group">
                 <label for="lng">Longitude: *</label>
-                <input name="lng" type="text" class="form-control" required autofocus />
+                <input name="lng" type="text" class="form-control" required  />
             </fieldset>
             <fieldset class="form-group text-right">
                 <input type="submit" class="btn btn-success" value="Submit"/>
