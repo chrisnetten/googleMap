@@ -24,8 +24,7 @@
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
   </head>
   <body>
-<script>
-  var locations = [
+
 <?php
 		
 
@@ -45,7 +44,7 @@ $qry='SELECT * FROM user';
     $lng = $user['lng']  ;
 }
 		?>
-  ];  
+  <script>
           
         function initializeMap() {
           
@@ -69,7 +68,7 @@ $qry='SELECT * FROM user';
                          position: myLatlng
                          
                           });
-                          for(var i = 0; i < locations.length; i++){
+                          
                            marker.setMap(map);
                          marker.addListener('click', function() {
                          infowindow.open(map, marker);
@@ -78,7 +77,7 @@ $qry='SELECT * FROM user';
                          var infowindow = new google.maps.InfoWindow({
                           content: name
                           });
-                          }
+                          
           
         
             
