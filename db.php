@@ -8,6 +8,7 @@
 	try
 	{
 		$db_Object=new PDO($dsn,$username,$password);
+		echo 'Database Connection Success';
 	}
 	catch(PDOException $e)
 	{
