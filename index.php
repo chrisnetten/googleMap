@@ -5,10 +5,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+      
+       <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      
+      
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">   
+     
+       <!-- Latest   jQuery -->
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  
+      <!-- Latest compiled and minified   JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+      
+      
     <script src="javascript/map.js" type="text/javascript"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="map" style="width: 100%; height: 500px;"></div>
     
     <h1 style="text-align: center">Add a Contact</h1>
 
