@@ -91,7 +91,7 @@ $qry='SELECT * FROM user';
 	
     <div class="row">
        <div class="col-sm-4">
-        <form method="post">
+        <form action="add.php" method="post">
             <fieldset class="form-group">
                 <label for="name">Name: *</label>
                 <input name="name" type="text" class="form-control" required autofocus />
