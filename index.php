@@ -49,7 +49,7 @@ $qry='SELECT * FROM user';
           
         function initializeMap() {
           
-         var user = <?php $markers ?>;
+         var user = [<?php $markers ?>];
           var name = parseFloat("<?php echo $name  ?>");
           var lat = parseFloat("<?php echo $lat ?>");
           var lng =  parseFloat("<?php echo $lng ?>");
