@@ -68,8 +68,18 @@ $qry='SELECT * FROM user';
                          position: myLatlng
                          
                           });
-                          
                            marker.setMap(map);
+                           marker.addListener('click', toggleBounce);
+}
+
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+                           
                          marker.addListener('click', function() {
                          infowindow.open(map, marker);
                           });
