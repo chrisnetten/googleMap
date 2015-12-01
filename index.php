@@ -69,7 +69,14 @@ $qry='SELECT * FROM user';
                          title: name
                           });
                            marker.setMap(map);
+                            marker.addListener('click', toggleBounce);
           
+          function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
           
         
             
