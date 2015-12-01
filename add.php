@@ -10,5 +10,5 @@ VALUES ( '$name' , '$lat' ,'$lng')";
 	$statement->closeCursor();
 	
 
-
+include('index.php');
 ?>

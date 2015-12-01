@@ -38,9 +38,9 @@ $qry='SELECT * FROM user';
 		$statement->closeCursor();
 		
     foreach ($resultset as $user) {
-    echo $user['name'] . '<br />';
-    echo $user['lat'] . '<br />' ;
-    echo $user['lng'] . '<br />' ;
+     $user['name'] = name;
+    $user['lat'] = lat;
+    $user['lng'] = lng ;
 }
 		?>
       <script>
