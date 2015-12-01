@@ -38,15 +38,18 @@ $qry='SELECT * FROM user';
 		$statement->closeCursor();
 		
     foreach ($resultset as $user) {
+     
     $name = $user['name'] . '<br />';
     $lat = $user['lat'] . '<br />' ;
     $lng = $user['lng'] . '<br />' ;
+    $markers = array($name, $lat, $lng);
 }
 		?>
       <script>
           
         function initializeMap() {
-
+          
+         var user = <?php $markers ?>;
           var name = parseFloat("<?php echo $name  ?>");
           var lat = parseFloat("<?php echo $lat ?>");
           var lng =  parseFloat("<?php echo $lng ?>");
@@ -61,14 +64,14 @@ $qry='SELECT * FROM user';
        
        
           
-           
+           for(var i = 0; i < user.length; i++) {
                     var myLatlng = new google.maps.LatLng( lat, lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng,
                          title: name
                           });
                            marker.setMap(map);
-           
+           }
           
         
             

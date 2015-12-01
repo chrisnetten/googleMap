@@ -5,7 +5,6 @@
 VALUES ( '$name' , '$lat' ,'$lng')";
 	
 	$statement = $db_Object->prepare($qry);
-	$statement->bindValue(':id', $id);
 	$statement->execute();
 	$statement->closeCursor();
 	
