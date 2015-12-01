@@ -59,10 +59,10 @@ $qry='SELECT * FROM user';
        
           
             for(var i = 0; user.length; i++) {
-                    var myLatlng = new google.maps.LatLng( user[i].lat, user[i].lng);
+                    var myLatlng = new google.maps.LatLng( lat, lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng,
-                         title: user[i].name
+                         title: name
                           });
                            marker.setMap(map);
             
