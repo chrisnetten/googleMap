@@ -72,12 +72,10 @@ $qry='SELECT * FROM user';
 
    
                          marker.addListener('click', function() {
-                           if (marker.getAnimation() !== null) {
-                              marker.setAnimation(null);
-                              } else {
+                           
                                 marker.setAnimation(google.maps.Animation.BOUNCE);
                                 infowindow.open(map, marker);
-                              }
+                             
                           });
           
                          var infowindow = new google.maps.InfoWindow({
