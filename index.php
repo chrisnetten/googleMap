@@ -75,11 +75,8 @@ $qry='SELECT * FROM user';
                            
                                 
                                 infowindow.open(map, marker);
-                             if(infowindow.open) {
                                marker.setAnimation(google.maps.Animation.BOUNCE);
-                             }else {
-                               marker.setAnimation(null);
-                             }
+                             
                           });
           
                          var infowindow = new google.maps.InfoWindow({
