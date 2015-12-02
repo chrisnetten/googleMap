@@ -69,16 +69,18 @@ $qry='SELECT * FROM user';
                          
                           });
                            marker.setMap(map);
-                           marker.addListener('click', toggleBounce);
-}
+                           
+                           
+                           marker.addListener('click', function(){
+                              if (marker.getAnimation() !== null) {
+                              marker.setAnimation(null);
+                              } else {
+                                marker.setAnimation(google.maps.Animation.BOUNCE);
+                              }
+                           });
 
-function toggleBounce() {
-  if (marker.getAnimation() !== null) {
-    marker.setAnimation(null);
-  } else {
-    marker.setAnimation(google.maps.Animation.BOUNCE);
-  }
-}
+ 
+
                            
                          marker.addListener('click', function() {
                          infowindow.open(map, marker);
