@@ -28,7 +28,7 @@
 <?php
 		
 
-$result = mysql_db_query("Select * FROM user");
+$result = mysql_query("Select * FROM user");
 
 $result = array();
 
