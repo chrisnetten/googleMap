@@ -28,13 +28,20 @@
 <?php
 		
 
-$result = mysql_query("Select * FROM user");
-
-$result = array();
-
-while($row = $db->database_fetch_assoc($query))
-{
-    $data[] = $row;
+$qry='SELECT * FROM user';
+		$statement =$db_Object->prepare($qry);
+		
+		$statement->execute();
+		
+		$resultset = $statement-> fetchAll();
+		
+		$statement->closeCursor();
+		
+    $data = array();
+    
+    foreach ($resultset as $user) {
+     data[] = $user;
+     
 }
 		?>
   <script>
@@ -42,6 +49,9 @@ while($row = $db->database_fetch_assoc($query))
         function initializeMap() {
           
          
+          var data = ["<?php echo $user  ?>"];
+        
+
         
           var mapOptions = {
             zoom: 8,
@@ -51,8 +61,8 @@ while($row = $db->database_fetch_assoc($query))
        var  map = new google.maps.Map(document.getElementById('map'),mapOptions);
        
        
-          for(var i = 0; i < $data.length; i++) {
-                 var myLatlng = new google.maps.LatLng($data[i].lat, $data[i].lng);
+          
+                 var myLatlng = new google.maps.LatLng( data.lat, data.lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng
                          
@@ -71,7 +81,7 @@ while($row = $db->database_fetch_assoc($query))
                          var infowindow = new google.maps.InfoWindow({
                           content: name
                           });
-          } 
+                          
           
         
             
