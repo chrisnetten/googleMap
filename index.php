@@ -27,12 +27,14 @@
 
 <?php
 		
-$array = $array();
+
 $result = mysql_db_query("Select * FROM user");
 
-while ($row = mysql_fetch_assoc($result)) {
-  
-  $array = array_merge($array , array_map('trim', explode(",", $row['user'])));
+$result = array();
+
+while($row = $db->database_fetch_assoc($query))
+{
+    $data[] = $row;
 }
 		?>
   <script>
@@ -49,8 +51,8 @@ while ($row = mysql_fetch_assoc($result)) {
        var  map = new google.maps.Map(document.getElementById('map'),mapOptions);
        
        
-          for(var i = 0; i < array.length; i++) {
-                 var myLatlng = new google.maps.LatLng(array[i].lat, array[i].lng);
+          for(var i = 0; i < $data.length; i++) {
+                 var myLatlng = new google.maps.LatLng($data[i].lat, $data[i].lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng
                          
