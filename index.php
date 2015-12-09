@@ -49,8 +49,8 @@ while ($row = mysql_fetch_assoc($result)) {
        var  map = new google.maps.Map(document.getElementById('map'),mapOptions);
        
        
-          for(var i = 0; i < user.length; i++) {
-                 var myLatlng = new google.maps.LatLng(user[i].lat, user[i].lng);
+          for(var i = 0; i < array.length; i++) {
+                 var myLatlng = new google.maps.LatLng(array[i].lat, array[i].lng);
                          var marker = new google.maps.Marker({
                          position: myLatlng
                          
